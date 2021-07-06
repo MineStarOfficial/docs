@@ -93,7 +93,7 @@ tags:
 其中，将 `{A}` 改为你刚才下载的 authlib-injector 的文件名；`B` 改为外置服务器的 API 地址；如果你不知道地址，请看 [外置服务器的 API 地址在哪里看？](#外置服务器的-api-地址在哪里看))。最后的启动命令 **差不多应该像这样**：
 
 ```bash
-java -javaagent:authlib-injector-1.x.xx.jar=https://skin.example.com/api/yggdrasil -jar server_file.jar
+java -javaagent:authlib-injector-1.xx.xx.jar=https://skin.example.com/api/yggdrasil -jar server_file.jar
 ```
 
 4. 打开服务器的配置文件 `server.properties`，将 `online-mode` 设置为 `true`；
