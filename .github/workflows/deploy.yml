@@ -13,26 +13,31 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out
       - uses: actions/checkout@v2
 
-      - name: 🔥 · Setup Node.js
+      - name: 🔥 Setup Node.js
         uses: actions/setup-node@v2.1.5
       
-      - name: 📦 · Install packages
+      - name: 🏬 Install packages
         run: npm install
       
-      - name: 🔨 · Build docs from local files
+      - name: 🔨 Build docs from local files
         run: npm run docs:build
       
-      - name: 🔎 · Check files exist
+      - name: 🔎 Check files exist
         run: |
-          cd docs
-          cd .vuepress
-          cd dist
+          cd docs/.vuepress/dist
           ls
       
-      - name: 🚀 · Push to Gitee
+      - name: 📦 Upload build artifacts
+        uses: actions/upload-artifact@master
+        with:
+          name: static-files
+          path: docs/.vuepress/dist
+
+      - name: 🚀 Push to Github repository
+        env:
+          remote_url: ${{ secrets.REMOTE_URL }}
         run: |
           cd docs/.vuepress/dist
           git config --global user.name "MineStarOfficial"
@@ -40,8 +45,8 @@ jobs:
           git init
           git add -A
           git commit -m "update files"
-          git remote add origin https://MineStarOfficial:mcminestarofficial233@gitee.com/MineStarOfficial/MineStarOfficial.git
+          git remote add origin $remote_url
           git push -u -f origin master
       
-      - name: 👌 · All done
-        run: echo Action to build docs and push to Gitee has been done!
+      - name: 👌 All done
+        run: echo Action to build docs and push to Gitub repository has been done!
