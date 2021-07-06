@@ -1,0 +1,47 @@
+name: Deploy
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out
+      - uses: actions/checkout@v2
+
+      - name: 🔥 · Setup Node.js
+        uses: actions/setup-node@v2.1.5
+      
+      - name: 📦 · Install packages
+        run: npm install
+      
+      - name: 🔨 · Build docs from local files
+        run: npm run docs:build
+      
+      - name: 🔎 · Check files exist
+        run: |
+          cd docs
+          cd .vuepress
+          cd dist
+          ls
+      
+      - name: 🚀 · Push to Gitee
+        run: |
+          cd docs/.vuepress/dist
+          git config --global user.name "MineStarOfficial"
+          git config --global user.email "official4minestar@gmail.com"
+          git init
+          git add -A
+          git commit -m "update files"
+          git remote add origin https://MineStarOfficial:mcminestarofficial233@gitee.com/MineStarOfficial/MineStarOfficial.git
+          git push -u -f origin master
+      
+      - name: 👌 · All done
+        run: echo Action to build docs and push to Gitee has been done!
