@@ -38,10 +38,16 @@ tags:
 
 ### 客户端 (玩家使用)
 
+::: note 提示
+
+如果你是第一次注册外置皮肤站，那么我们推荐你使用 [LittleSkin](https://mcskin.littleservice.cn/ "LittleSkin")。除非有些服务器自定义皮肤站时，你必须使用服主提供的皮肤站网址。
+
+:::
+
 1. 准备一个可以正常接收邮件的邮箱 (如 QQMail，163Mail，GMail 等)；
-2. 进入 [LittleSkin 官网](https://mcskin.littleservice.cn/ "LittleSkin 官网")、[MineStar Skin Site](https://skin.minestar.top/) 等之类的你想要注册的皮肤站；
+2. 进入 [LittleSkin](https://mcskin.littleservice.cn/ "LittleSkin") 等之类的你想要注册的皮肤站 (上面的提示已经提到过了)；
 3. 点击 **`现在注册`** 按钮，填入你的信息 `电子邮件`、`密码`，在 `昵称` 一栏填入你的游戏名，点击 **`注册`** 按钮；
-4. 查看邮箱邮件箱，找到 `LittleSkin <no-reply@littlesk.in>` 发送来的邮件，打开邮件内的链接；
+4. 查看邮箱邮件箱，找到 `LittleSkin <no-reply@littlesk.in>` 之类的邮件 (发送来的名字和域名取决于你选的皮肤站，这里的例子为 `LittleSkin`) 发送来的邮件，并打开邮件内的链接；
 5. 返回仪表盘，在左侧找到 **`角色管理`** 并点击。点击 **`＋添加新角色`** 蓝色按钮，输入你的游戏名并点击 **`确定`** 按钮；
 
 ---
@@ -82,7 +88,7 @@ tags:
 
 ~~`Geyser` 服务端目前并不支持 `外置登录 (authlib-injector)`，请 `Geyser` 服主使用正版登录或离线登录！~~
 
-目前 `Geyser` 服务端支持 `外置登录 (authlib-injector)`，详见 [https://www.bilibili.com/video/BV1rK411c7rN](https://www.bilibili.com/video/BV1rK411c7rN)。
+目前 `Geyser` 服务端已经支持 `外置登录 (authlib-injector)`，详见 [https://www.bilibili.com/video/BV1rK411c7rN](https://www.bilibili.com/video/BV1rK411c7rN)。
 
 :::
 
@@ -103,10 +109,10 @@ java -javaagent:authlib-injector-1.xx.xx.jar=https://skin.example.com/api/yggdra
 
 在皮肤站的 `仪表盘` 页面的左下方有个 `快速配置启动器`，其中的 `本站的 Yggdrasil API 认证服务器地址` 即为 `外置服务器 API 地址`。
 
-
 ## 特别感谢
 
 ::: cardList
+
 ```yaml
 - name: yushijinhun
   desc: authlib-injector 的作者
@@ -114,19 +120,22 @@ java -javaagent:authlib-injector-1.xx.xx.jar=https://skin.example.com/api/yggdra
   textColor: '#A05F2C'
   link: https://github.com/yushijinhun
 - name: LittleSkin
-  desc: 提供了稳定 Yggdrasil API
+  desc: 提供了稳定 Yggdrasil API 的一流皮肤站
   bgColor: '#718971'
   textColor: '#FFFFFF'
   link: https://mcskin.littleservice.cn/
 - name: blessing-skin-server
-  desc: Github 开源 PHP Minecraft 皮肤站
+  desc: 开源的基于 PHP 的 Minecraft 皮肤站框架
   bgColor: '#FF6000'
   textColor: '#FFFFFF'
   link: https://github.com/bs-community/blessing-skin-server
 ```
+
 :::
 
--------------
+---
+
 引用文章：
+
 1. [知乎问答](https://www.zhihu.com/question/441838192)
 2. [MoeDev の 悄悄话](https://moedev.net/authlib-injector/)
